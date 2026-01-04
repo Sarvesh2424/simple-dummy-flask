@@ -12,7 +12,7 @@ commentcollection = db["comments"]
 
 @app.route("/")
 def hello_world():
-    return "Hello, World!"
+    return "Hello, World, good morning"
 
 
 @app.route("/add_post", methods=["POST"])
