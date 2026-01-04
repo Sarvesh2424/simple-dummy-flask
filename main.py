@@ -1,9 +1,14 @@
+import os
 from flask import Flask, request
 from pymongo import MongoClient
+from dotenv import load_dotenv
+
+load_dotenv()
+db_uri = os.getenv("DB")
 
 app = Flask(__name__)
 
-client = MongoClient("mongodb+srv://10650sarvesh_db_user:samp24@cluster0.xvaqyve.mongodb.net/?appName=Cluster0")
+client = MongoClient(db_uri)
 db = client["userpost"]
 usercollection = db["userpost"]
 postcollection = db["posts"]
